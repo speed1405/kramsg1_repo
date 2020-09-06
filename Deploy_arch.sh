@@ -63,7 +63,7 @@ mount "${part_boot}" /mnt/boot
 ### Install and configure the basic system ###
 wget https://raw.githubusercontent.com/kramsg12/kramsg1_repo/master/pacman.conf 
 mv -f pacman.conf /etc/pacman.conf
-
+pacman -Sy
 pacstrap /mnt kramsg1-base
 genfstab -t PARTUUID /mnt >> /mnt/etc/fstab
 echo "${hostname}" > /mnt/etc/hostname
