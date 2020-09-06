@@ -74,7 +74,7 @@ echo "${hostname}" > /mnt/etc/hostname
 cat >>/mnt/etc/pacman.conf <<EOF
 [kramsg1_repo]
 SigLevel = Optional TrustAll
-Server = $REPO_URL
+Server = https://kramsg12.github.io/$repo/$arch
 EOF
 
 arch-chroot /mnt bootctl install
