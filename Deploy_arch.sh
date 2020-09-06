@@ -71,11 +71,11 @@ pacstrap /mnt kramsg1-base
 genfstab -t PARTUUID /mnt >> /mnt/etc/fstab
 echo "${hostname}" > /mnt/etc/hostname
 
-cat >> /mnt/etc/pacman.conf <<EOF
-[kramsg1_repo]
-SigLevel = Optional TrustAll
-Server = https://kramsg12.github.io/$repo/$arch
-EOF
+#cat >> /mnt/etc/pacman.conf <<EOF
+#[kramsg1_repo]
+#SigLevel = Optional TrustAll
+#Server = https://kramsg12.github.io/$repo/$arch
+#EOF
 
 arch-chroot /mnt bootctl install
 
