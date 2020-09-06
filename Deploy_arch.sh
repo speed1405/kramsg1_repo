@@ -62,7 +62,7 @@ mount "${part_boot}" /mnt/boot
 
 ### Install and configure the basic system ###
 cat >>/etc/pacman.conf <<EOF
-[mdaffin]
+[kramsg1_repo]
 SigLevel = Optional TrustAll
 Server = https://kramsg12.github.io/$repo/$arch
 EOF
