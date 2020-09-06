@@ -19,6 +19,5 @@ depends=(
     'texinfo'
     'zsh'
     'pam'
-    'openssh'
     
 )
