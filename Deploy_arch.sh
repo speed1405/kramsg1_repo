@@ -5,8 +5,6 @@
 set -uo pipefail
 trap 's=$?; echo "$0: Error on line "$LINENO": $BASH_COMMAND"; exit $s' ERR
 
-REPO_URL="https://kramsg12.github.io/$repo/$arch"
-
 ### Get infomation from user ###
 hostname=$(dialog --stdout --inputbox "Enter hostname" 0 0) || exit 1
 clear
@@ -66,7 +64,7 @@ mount "${part_boot}" /mnt/boot
 cat >>/etc/pacman.conf <<EOF
 [mdaffin]
 SigLevel = Optional TrustAll
-Server = $REPO_URL
+Server = https://kramsg12.github.io/$repo/$arch
 EOF
 
 pacstrap /mnt kramsg1-base
