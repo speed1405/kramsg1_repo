@@ -61,11 +61,8 @@ mkdir /mnt/boot
 mount "${part_boot}" /mnt/boot
 
 ### Install and configure the basic system ###
-#cat >> /etc/pacman.conf <<EOF
-#[kramsg1_repo]
-#SigLevel = Optional TrustAll
-#Server = https://kramsg12.github.io/$repo/$arch
-#EOF
+wget https://raw.githubusercontent.com/kramsg12/kramsg1_repo/master/pacman.conf 
+cp -f pacman.conf /etc/pacman.conf
 
 pacstrap /mnt kramsg1-base
 genfstab -t PARTUUID /mnt >> /mnt/etc/fstab
