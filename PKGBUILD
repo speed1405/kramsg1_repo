@@ -10,7 +10,6 @@ depends=(
     # package list
     'base'
     'linux'
-    'linux-headers'
     'linux-firmware'
     'dosfstools'
     'e2fsprogs'
