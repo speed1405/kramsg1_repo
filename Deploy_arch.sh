@@ -2,11 +2,12 @@
 # WARNING: this script will destroy data on the selected disk.
 # This script can be run by executing the following:
 #   curl -sL http://bit.ly/kramsg1arch | bash
-pacman -Syy
-pacman -Sy dialog wget
+
 set -uo pipefail
 trap 's=$?; echo "$0: Error on line "$LINENO": $BASH_COMMAND"; exit $s' ERR
 
+pacman -Syy
+pacman -Sy dialog wget
 ### Get infomation from user ###
 hostname=$(dialog --stdout --inputbox "Enter hostname" 0 0) || exit 1
 clear
